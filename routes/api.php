@@ -31,4 +31,5 @@ Route::group(['prefix' => 'users', 'as' => 'users'], function () {
 
 Route::group(['prefix' => 'roles', 'as' => 'roles'], function () {
     Route::get('/', [RolesController::class, 'index']);
+    Route::post('/create', [RolesController::class, 'create']);
 });
