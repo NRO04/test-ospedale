@@ -9,9 +9,11 @@ use Ospedale\Users\Domain\Repository\UserRepository;
 class UserService implements UserRepository
 {
     protected Model $model;
+    protected array $relations;
 
     function __construct()
     {
+        $this->relations = ['rol', 'eps'];
         $this->model = new Users();
     }
 
@@ -20,24 +22,29 @@ class UserService implements UserRepository
         return $this->model->create($data);
     }
 
-    function delete(Users $user)
+    function delete(Model $user)
     {
         return $user->delete();
     }
 
-    function update(Users $user, array $data)
+    function update(Model $user, array $data)
     {
         return $user->update($data);
     }
 
     function all()
     {
-        return $this->model->all();
+        $query = $this->model;
+        if (!empty($this->relations)) {
+            $query = $query->with($this->relations);
+        }
+
+        return $query->get();
     }
 
     function findById(int $id)
     {
-        return $this->model->get($id);
+        return $this->model->find($id);
     }
 
 }

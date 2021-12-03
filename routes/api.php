@@ -27,9 +27,10 @@ Route::group(['prefix' => 'eps', 'as' => 'eps'], function () {
 });
 
 Route::group(['prefix' => 'users', 'as' => 'users'], function () {
-    Route::get('/', [UserController::class, 'index']);
-    Route::get('/all', [UserController::class, 'all']);
+    Route::get('/', [UserController::class, 'all']);
     Route::post('/create', [UserController::class, 'create']);
+    Route::delete('/delete', [UserController::class, 'delete']);
+    Route::put('/update', [UserController::class, 'update']);
 });
 
 Route::group(['prefix' => 'roles', 'as' => 'roles'], function () {
