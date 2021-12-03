@@ -18,7 +18,17 @@ class CreateUserUseCase implements UseCaseRepository
 
     function execute(DTO $dto = null): mixed
     {
+        $password = $dto->get('password');
+        $dto->set([
+            'password' => $this->hashPassword($password)
+        ]);
+
         return $this->userRepository->create($dto->extractDto());
+    }
+
+    function hashPassword($password): string
+    {
+        return bcrypt($password);
     }
 
 
