@@ -25,11 +25,9 @@ Route::group(['prefix' => 'eps', 'as' => 'eps'], function () {
     Route::get('/', [EpsController::class, 'index']);
 });
 
-
 Route::group(['prefix' => 'users', 'as' => 'users'], function () {
     Route::get('/', [UserController::class, 'index']);
 });
-
 
 Route::group(['prefix' => 'roles', 'as' => 'roles'], function () {
     Route::get('/', [RolesController::class, 'index']);

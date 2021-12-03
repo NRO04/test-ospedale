@@ -17,6 +17,7 @@ class TbUsersOspedale extends Migration
             $table->id();
             $table->string('name');
             $table->string('nit');
+            $table->string('email');
             $table->string('password');
             $table->string('gender');
             $table->string('date_birth');
