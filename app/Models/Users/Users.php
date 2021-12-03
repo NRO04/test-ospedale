@@ -12,5 +12,5 @@ class Users extends Model
     protected $table = 'tb_users';
 
     protected $fillable = ['name', 'email', 'password', 'rol_id', 'eps_id',
-        'nit', 'phone', 'gender', 'date_birth',];
+        'nit', 'phone', 'gender', 'date_birth'];
 }

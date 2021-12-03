@@ -21,4 +21,10 @@ class RolService implements RolRepository
         return $this->model->create($data)->toArray();
     }
 
+    function all(): array
+    {
+        return $this->model->all()->toArray();
+    }
+
+
 }

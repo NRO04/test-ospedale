@@ -23,10 +23,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'eps', 'as' => 'eps'], function () {
     Route::get('/', [EpsController::class, 'index']);
+    Route::post('/create', [EpsController::class, 'create']);
 });
 
 Route::group(['prefix' => 'users', 'as' => 'users'], function () {
     Route::get('/', [UserController::class, 'index']);
+    Route::get('/all', [UserController::class, 'all']);
+    Route::post('/create', [UserController::class, 'create']);
 });
 
 Route::group(['prefix' => 'roles', 'as' => 'roles'], function () {

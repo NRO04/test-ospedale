@@ -1,10 +1,9 @@
 <?php
 
-namespace Ospedale\Roles\Domain\Repository;
+namespace Ospedale\Eps\Domain\Repository;
 
-interface RolRepository
+interface EpsRepository
 {
-
     function create(array $data);
 
     function all(): array;

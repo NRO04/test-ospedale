@@ -20,7 +20,7 @@ class TbUsersOspedale extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('gender');
-            $table->string('date_birth');
+            $table->date('date_birth');
             $table->string('phone');
             $table->foreignId('rol_id')->references('id')->on('tb_roles');
             $table->foreignId('eps_id')->references('id')->on('tb_eps');
